@@ -10,7 +10,7 @@ window.onload = function () {
             precio: precio_producto.value,
             disponible: disponible_producto.checked
         }
-        fetch('http://localhost:5000/agregar_producto',{
+        fetch('https://webinar-codigo.herokuapp.com/agregar_producto',{
             method:'POST',
             body:JSON.stringify(data),
             headers: {
