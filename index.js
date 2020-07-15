@@ -34,6 +34,7 @@ let traerDatos = (contenedor) => {
             }
         }
     }).catch((error)=>{
+        console.log(error);
         console.log('No hay server');
         contenedor.innerHTML += `<div class="col-12"><p class="text-center text-danger">No se pudo conectar con el servidor, valide la conexión.</p></div> `
     });
