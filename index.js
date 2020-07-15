@@ -27,7 +27,11 @@ let traerDatos = (contenedor) => {
            `
             }
         }else{
-            contenedor.innerHTML += `<div class="col-12"><p class="text-center">No hay productos, agregue uno.</p></div> `
+            if(data.message){
+                contenedor.innerHTML += `<div class="col-12"><p class="text-center">${data.message}.</p></div> `
+            }else{
+                contenedor.innerHTML += `<div class="col-12"><p class="text-center">No hay productos, agregue uno.</p></div> `
+            }
         }
     }).catch((error)=>{
         console.log('No hay server');
