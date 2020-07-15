@@ -6,6 +6,7 @@ let traerDatos = (contenedor) => {
         console.log(data.message);
         contenedor.innerHTML = '';
         if (data.content) {
+            console.log(data.content);
             for (let index = 0; index < data.content.length; index++) {
                 console.log(data.content[index]);
                 let disponible = ''
@@ -16,7 +17,7 @@ let traerDatos = (contenedor) => {
                 }
                 contenedor.innerHTML += `
             <div class="card m-2" style="width: 18rem;">
-                <div class="card-body">
+                <div class="card-body bg-light">
                     <h5 class="card-title">${data.content[index].nombre}</h5>
                     <button type="button" class="close text-danger" aria-label="Close" onclick="eliminar(${data.content[index].id})">
                         <span aria-hidden="true">&times;</span>
@@ -28,9 +29,9 @@ let traerDatos = (contenedor) => {
             }
         }else{
             if(data.message){
-                contenedor.innerHTML += `<div class="col-12"><p class="text-center">${data.message}.</p></div> `
+                contenedor.innerHTML += `<div class="col-12"><p class="text-center text-light">${data.message}</p></div> `
             }else{
-                contenedor.innerHTML += `<div class="col-12"><p class="text-center">No hay productos, agregue uno.</p></div> `
+                contenedor.innerHTML += `<div class="col-12"><p class="text-center text-light">No hay productos, agregue uno.</p></div> `
             }
         }
     }).catch((error)=>{
