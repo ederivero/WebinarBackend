@@ -47,7 +47,9 @@ window.onload = function () {
 }
 function eliminar(index) {
     var contenedor = document.getElementById('contenedor');
-    fetch(`https://webinar-codigo.herokuapp.com/producto/${index}`).then((rpta) => {
+    fetch(`https://webinar-codigo.herokuapp.com/producto/${index}`,{
+        method:'DELETE'
+    }).then((rpta) => {
         return rpta.json();
     }).then((data) => {
         console.log(data);
